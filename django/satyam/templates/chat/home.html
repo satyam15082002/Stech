@@ -1,0 +1,26 @@
+{% extends 'chat/nav.html' %}
+{% load static %}
+{% block title %}{{username}}/Chat{% endblock%}
+{% block head %}
+    <style>
+#group>li>a{
+    margin-top: 10px;
+    height: 10vh;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 2% 0%;
+}
+#group{
+    list-style-type: none;
+}
+    </style>
+{% endblock %}
+{% block body %}
+       <div class="container text-center">
+       <ul id="group">
+       {% for g in group %}
+       <li><a href="{% url 'insidegroup' g.id %}" class="btn btn-info btn-block">{{g.group_name}} <span class="badge badge-white">Admin:-{{g.admin}}</span></a> </li>
+       {% endfor %}
+       </ul>
+    </div>
+{% endblock %}

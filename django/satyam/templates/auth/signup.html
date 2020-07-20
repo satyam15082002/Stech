@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="author" content="satyam15082002">
+    <meta name="description" content="satyam15082002 pythonanywhere.com">
+    <meta name="keywords" content="satyam15082002 pythonanywhere signup">
+
+    <link href="{% static 'c.css' %}" rel="stylesheet" type="text/css"/>
+  <title>Signup</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+<body>
+  <div class="jumbotron text-center">
+    <h2>Stech</h2>
+    </div>
+<div class="container text-center">
+<h1>Signup</h1>
+<form action="" method="POST" class="form-group">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username" required class="form-control"/>
+    <br>
+    <input type="email" name="email" placeholder="email" required class="form-control"/>
+    <br>
+    <input type="password" name="password1" placeholder="password" required class="form-control"/>
+    <br>
+    <input type="password" name="password2" placeholder="reenter password" required class="form-control"/>
+    <br>
+    <input type="submit" value="Signup" class="btn btn-primary btn-block"/>
+</form>
+{% if s %}
+<h1>account created successfully</h1>
+ {% endif %}
+</div>
+<div class="container text-center">
+{% for message in messages %}
+<h1> {{ message }}<h1>
+{% endfor %}
+<a href="login">Login</a>
+</div>
+</body> 
+</html>

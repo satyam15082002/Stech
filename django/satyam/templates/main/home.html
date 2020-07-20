@@ -1,0 +1,25 @@
+{% extends 'main/nav.html' %}
+{% block title %}{{username}}/Home{% endblock%}
+{% block head %}
+<style>
+  #img{
+      margin-top: 5px;
+  }
+</style>
+{% endblock%}
+{% block body %}
+<div class="container text-center">
+<h1> welcome you login </h1>
+<h1> {{user}}</h1>
+</div>
+{% if a  %}
+<div class="container-fluid ">
+{% for s in a %}
+<div class="col-lg-4 col-xs-12 text-center" id="img" >
+    <span class="btn btn-primary btn-block">{{s.username}}</span>
+<img src="media/{{s.img}}" height="300"  />
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

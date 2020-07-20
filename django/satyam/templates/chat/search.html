@@ -1,0 +1,30 @@
+{% extends 'chat/nav.html' %}
+{% load static %}
+{% block title %}
+{{username}}/Search
+{% endblock %}
+{% block head %}
+        <script src="{% static 'jquery.js' %}"></script>
+    <style>
+#group{
+    list-style-type: none;
+    font-size: larger;
+    letter-spacing: 1px;
+}
+#group>li{
+    margin-top: 10px;
+}
+#name ,span{
+    margin-right: 10px;
+}
+    </style>
+{% endblock %}    
+{% block body %}
+       <div class="container">
+       <ul id="group">
+       {% for g in group %}
+       <li><a href="{% url 'add' g.id %}" class="btn btn-primary btn-block"><span id="name">{{g.group_name}}</span><span class="badge bage-white">Admin:-{{g.admin}}</span>Join Group</a></li>
+       {% endfor %}
+       </ul>
+    </div>
+{% endblock %}

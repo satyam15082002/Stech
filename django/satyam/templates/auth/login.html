@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="author" content="satyam15082002">
+        <meta name="description" content="satyam15082002 pythonanywhere.com">
+        <meta name="keywords" content="satyam15082002 pythonanywhere login">    
+    <link href="{% static 'c.css' %}" rel="stylesheet" type="text/css"/>
+     <title>Login</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+<body>
+<div class="jumbotron text-center">
+<h2>Stech</h2>
+</div>
+<div class="container text-center">
+<h1>Login</h1>
+<form action="login" method="POST" class="from-group">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username" required class="form-control"/>
+    <br>
+    <input type="password" name="password" placeholder=" password" required class="form-control"/>
+    <br>
+    <input type="submit" value="Login" class="btn btn-primary btn-block"/>
+</form>
+<div>
+    {% for message in messages %}
+    <h1> {{ message }}<h1>
+    {% endfor %}
+    </div>
+    <a href="signup">Signup</a>
+</div>
+</body> 
+</html>

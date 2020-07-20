@@ -1,0 +1,35 @@
+{% extends 'main/nav.html' %}
+{% load static %}
+{% block title %}{{username}}/Setting{% endblock%}
+{% block head%} 
+<style>
+    #del>div{
+     height: 30vh;
+    }
+    #del>div:nth-child(even){
+        background-color: antiquewhite;
+        padding: 15px;
+        text-align: center;
+    }
+    #del>div:nth-child(odd){
+        background-color:rgba(172, 255, 47, 0.486);
+        padding: 15px;
+        text-align: center;
+    }
+</style>
+{% endblock %}
+{% block body %} 
+<div class="container text-center" id="del">
+    <div>
+<a href="chat/" class="col-xs-12 col-lg-12"><h3>Chat</h3></a>
+</div>
+<div>
+<form action="delete" method="POST" >
+    {% csrf_token %}
+   <h3>Delete account:</h3> 
+    <br>   
+   <input type="submit" value="delete your account" class="btn btn-danger"/>
+   </form>
+   </div>
+</div>
+{% endblock %}

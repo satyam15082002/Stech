@@ -1,0 +1,40 @@
+
+#msg{
+display: grid;
+grid-template-columns: 100%;
+grid-gap: 2px;
+}
+#msg>li:nth-child(odd){
+      background-color: antiquewhite;
+      padding: 2px;
+}
+#msg>li:nth-child(even){
+    background-color:rgba(188, 255, 87, 0.767);
+    padding: 2px;
+}
+
+nav>a{
+ margin-top: 5px;
+}
+form{
+    display: grid;
+    grid-template-columns: 80vw 20vw;
+    bottom: 0px;
+    height: 6vh;
+    position: fixed;
+}
+form>input{
+    border-radius: 20px;
+
+}
+form>input[type="submit"]
+{
+    background-color: rgba(255, 8, 0, 0.623);
+}
+form>input[type="submit"]:hover
+{
+    background-color: rgba(0, 0, 255, 0.301);
+}
+#msg{
+    margin-bottom: 30vh;
+}

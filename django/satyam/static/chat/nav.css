@@ -1,0 +1,14 @@
+#main>a{
+    display: none;
+}
+#main:hover a{
+    display: block;
+}
+#main:hover a:hover{
+    display: block;
+    background-color:rgb(121, 158, 238);
+}
+#main{
+    background-color: rgba(17, 124, 218, 0.473);
+    text-transform: capitalize;
+}
